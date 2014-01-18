@@ -1,41 +1,38 @@
 ## Auth API Documentation
 
-<nav class="outline">
-<ul>
-  <li><a href="#get-key">Get Key</a>
-    <ul>
-      <li><a href="#get-key-url">Resource URL</a></li>
-      <li><a href="#get-key-param">Parameters</a></li>
-      <li><a href="#get-key-request">Sample Request</a></li>
-      <li><a href="#get-key-response">Sample Response</a></li>
-      <li><a href="#get-key-error">Sample Error</a></li>
-    </ul>
-  </li>
-</ul>
-</nav>
+- [Get Key (Login)](#get-key)
+	+ [Resource URL](#get-key-url)
+	+ [Parameters](#get-key-param)
+	+ [Sample Request](#get-key-request)
+	+ [Sample Response](#get-key-response)
+	+ [Sample Error](#get-key-error)
+- [Register](#register)
+    + [Resource URL](#register-url)
+    + [Parameters](#register-param)
+    + [Sample Request](#register-request)
+    + [Sample Response](#register-response)
 
-
-### <a id="get-key"></a> `POST` Get Key
+### <a name="get-key"></a> `POST` Get Key
 Getting key to access another API with icon `🔒`. First step to access our system with API. 
 
-#### <a id="get-key-url"></a> Resource URL
+#### <a name="get-key-url"></a> Resource URL
 /api/v2/auth/login
 
-#### <a id="get-key-param"></a> Parameters
-+ `email` [required with password] Valid email address
-+ `password` [required with email]
-+ `fb_token` [required with fb_uid]
-+ `fb_uid` [required with fb_token]
-+ `gcm_id` [_optional_]
+#### <a name="get-key-param"></a> Parameters
++ `email` ___`required`___ with password. Valid email address
++ `password` ___`required`___ with email. User password.
++ `fb_token` ___`required`___ with fb_uid. Facebook token from Facebook Connect.
++ `fb_uid` ___`required`___ with fb_token. Facebook UID from Facebook Connect. Used for checking existing user.
++ `gcm_id` _`optional`_ Google Cloud Message ID. For notification.
 
 You can use with either email and password, or fb_token and fb_uid. 
 
-#### <a id="get-key-request"></a>Sample Request
+#### <a name="get-key-request"></a>Sample Request
 ````sh
 curl -X POST --data "email=shcode@ymail.com&password=rahasia" http://shoop.dev/api/v2/auth/login
 ````
 
-#### <a id="get-key-response"></a>Sample Response
+#### <a name="get-key-response"></a>Sample Response
 
 ````json
 {
@@ -43,7 +40,7 @@ curl -X POST --data "email=shcode@ymail.com&password=rahasia" http://shoop.dev/a
     "key": "4974328ce522a3eb86ecf73a193490314cf98c74"
 }
 ````
-#### <a id="get-key-error"></a>Sample Error
+#### <a name="get-key-error"></a>Sample Error
 
 Missing parameter.
 
@@ -62,3 +59,38 @@ Password invalid.
     "error": "Your password is invalid."
 }
 ````
+
+### <a name="register"></a> `POST` Register
+Register to Shoop system. If you connect with facebook please add fb_token.
+
+#### <a name="register-url"></a> Resource URL
+/api/v2/auth/register
+
+#### <a name="register-param"></a> Parameters
++ `email` ___`required`___ Valid email address.
++ `password` ___`required`___ User password.
++ `name` ___`required`___ User name.
++ `id_location` ___`required`___ Location ID, you can get it from [Location](#).
++ `phone` _`optional`_ User phone.
++ `gcm_regid` _`optional`_ Google Cloud Message ID. For notification.
++ `longitude` _`optional`_ Location user by Longitude.
++ `latitude` _`optional`_ Location user by Latitude.
++ `avatar` _`optional`_ Path for user avatar
++ `fb_token` _`optional`_ Facebook Access Token from Facebook Connect.
++ `show_phone` __`deprecated`__ 
++ `address` __`deprecated`__
+
+#### <a name="register-request"></a>Sample Request
+````sh
+curl -X POST --data "email=shcode@ymail.com&password=rahasia&name=shcode&id_location=7&phone=082232856363" http://shoop.dev/api/v2/auth/register
+````
+
+#### <a name="register-response"></a>Sample Response
+
+````json
+{
+    "status": 1,
+    "key": "4974328ce522a3eb86ecf73a193490314cf98c74"
+}
+````
+
