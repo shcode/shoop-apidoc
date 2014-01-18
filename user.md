@@ -1,146 +1,195 @@
 ## User API Documentation
 
-##### <a id="get-active-user"></a>`GET` `🔒` Get Active User 
-Mendapatkan informasi dari aktif user
+- [Get Active User](#get-active-user)
+  + [Resource URL](#get-active-user-url)
+  + [Parameters](#get-active-user-param)
+  + [Sample Request](#get-active-user-request)
+  + [Sample Response](#get-active-user-response)
+- [Get User](#get-user)
+  + [Resource URL](#get-user-url)
+  + [Parameters](#get-user-param)
+  + [Sample Request](#get-user-request)
+  + [Sample Response](#get-user-response)
+- [Edit User](#edit-user)
+  + [Resource URL](#edit-user-url)
+  + [Parameters](#edit-user-param)
+  + [Sample Request](#edit-user-request)
+  + [Sample Response](#edit-user-response)
 
-##### Resource URL
-[http://shoop-v4.mlopp.com/api/v2/user/get_active_user](http://shoop-v4.mlopp.com/api/v2/user/get_active_user)
+#### <a name="get-active-user"></a> `GET` `🔒` Get Active User
+Get information about active user. include count product, following, follower, and (rating [not yet])
 
-##### Parameters
-No Parameters
+##### <a name="get-active-user-url"></a> Resource URL
+/api/v2/user/get_active_user
 
-##### <a id="mutation-history-sample-request"></a> Sample Request
+##### <a name="get-active-user-param"></a> Parameters
+No parameter. only key.
+
+##### <a name="get-active-user-request"></a>Sample Request
 ````sh
-curl -u 204254:Sy7PRGGr4foUk22uzjMu "https://api.bukalapak.com/v1/dompet/history/mutations.json?page=1&per_page=1"
-
+curl -H "X-API-KEY: 4974328ce522a3eb86ecf73a193490314cf98c74" http://shoop.dev/api/v2/user/get_active_user
 ````
 
-##### <a id="mutation-history-sample-response"></a> Sample Response
+##### <a name="get-active-user-response"></a>Sample Response
+
 ````json
 {
-  "status":"OK",
-  "history":[{"id":346,
-              "type":"Deposit::Credit",
-              "action":"remit",
-              "amount":30000,
-              "initial_balance":0,
-              "final_balance":30000,
-              "transaction_id":51938,
-              "transaction_no":"130925111838",
-              "created_at":"2013-11-25T15:32:47+07:00",
-              "updated_at":"2013-11-25T15:32:47+07:00"}],
-  "message":null
+    "user": {
+        "id_user": "2",
+        "name": "M. Sulton Hasanuddin",
+        "email": "shcode@ymail.com",
+        "phone": "+6283857723355",
+        "birthdate": "1986-12-15",
+        "username": "shcode",
+        "address": "Jl. Merak No. 10 Surabaya",
+        "city": "Surabaya",
+        "country": "Indonesia",
+        "bio": null,
+        "avatar": "hohoho",
+        "type": "2",
+        "fb_token": "",
+        "fb_token_expired": null,
+        "tw_token": "218307206-cTmwJ7vAijoufjtbQzVvowImzP9jq2WUbADcFtnc",
+        "tw_secret": "SHhfmg4jmiBEwO0EFBIMCaaI4V2hArJyI5vKnl4aq5Y",
+        "album_id": "4222704171637",
+        "show_phone": "1",
+        "gcm_regid": null,
+        "updated": "1",
+        "fb_uid": "null",
+        "joined_date": "2013-04-01 11:00:00",
+        "premium_end": "2013-10-15 00:47:55",
+        "id_key": "2",
+        "last_activity": null,
+        "buyer_poin": "0",
+        "seller_poin": "0",
+        "is_trusted": "0",
+        "is_premium": "1",
+        "id_location": null
+    },
+    "product_count": {
+        "all": 54,
+        "active": 0
+    },
+    "follow": {
+        "following": 0,
+        "follower": 0
+    },
+    "status": 1
 }
 ````
 
-#### <a id="withdrawal-history"></a> Withdrawal History
-Get current user’s withdrawal history.
+#### <a name="get-user"></a> `GET` `🔒` Get User
+Get information about another user. include count product, following, follower, and (rating [not yet])
 
-+ Use `GET` http method
-+ Requires authentication
+##### <a name="get-user-url"></a> Resource URL
+/api/v2/user/get_user
 
-##### <a id="withdrawal-history-url"></a> Resource URL
-[https://api.bukalapak.com/v1/dompet/history/withdrawals.json](https://api.bukalapak.com/v1/dompet/history/withdrawals.json)
+##### <a name="get-user-param"></a> Parameters
++ `id_user` ___`required`___ ID User from user which request.
 
-##### <a id="withdrawal-history-parameters"></a> Parameters
-+ `page` *(optional)*. Page number to display. Default value is `1`.
-+ `per_page` *(optional)*. Number of record to display per page. Default value is `10`.
-
-##### <a id="withdrawal-history-sample-request"></a> Sample Request
+##### <a name="get-user-request"></a>Sample Request
 ````sh
-curl -u 204254:Sy7PRGGr4foUk22uzjMu "https://api.bukalapak.com/v1/dompet/history/withdrawals.json?page=1&per_page=1"
-
+curl -H "X-API-KEY: 4974328ce522a3eb86ecf73a193490314cf98c74" http://shoop.dev/api/v2/user/get_user?id_user=444
 ````
 
-##### <a id="withdrawal-history-sample-response"></a> Sample Response
+##### <a name="get-user-response"></a>Sample Response
+
 ````json
 {
-  "status":"OK",
-  "history":[{"amount":25000,
-              "bank_account_id":41812,
-              "cancelled_at":null,
-              "created_at":"2013-11-22T16:00:39+07:00",
-              "deposit_id":1,
-              "id":4,
-              "processed_at":null,
-              "state":"pending",
-              "updated_at":"2013-11-22T16:00:39+07:00"}],
-  "message":null
+    "user":{
+        "name":null,
+        "address":null,
+        "email":"banghen@gmail.com",
+        "phone":"+628157901652",
+        "city":null,
+        "country":null,
+        "buyer_poin":"0",
+        "seller_poin":"0",
+        "id_location":null
+    },
+    "product_active_count":{
+        "all":0,
+        "active":0
+    },
+    "follow":{
+        "following":0,
+        "follower":0
+    },
+    "status":1
 }
 ````
 
-#### <a id="withdrawal-request"></a> Withdrawal Request
-Make withdrawal request for current user.
+#### <a name="edit-user"></a> `POST` `🔒` Edit User
+Edit active user
 
-+ Use `POST` http method
-+ Requires authentication
+##### <a name="get-user-url"></a> Resource URL
+/api/v2/user/edit_user
 
-##### <a id="withdrawal-request-url"></a> Resource URL
-[https://api.bukalapak.com/v1/dompet/withdraw.json](https://api.bukalapak.com/v1/dompet/withdraw.json)
+##### <a name="get-user-param"></a> Parameters
++ `name` _`optional`_ The name of the user.
++ `gcm_id` _`optional`_  
++ `address` _`optional`_ 
++ `id_location` _`optional`_ 
++ `phone` _`optional`_ 
++ `is_sundul` _`optional`_ 
++ `tw_token` _`optional`_ 
++ `tw_secret` _`optional`_ 
++ `avatar` _`optional`_ 
++ `fb_token` _`optional`_ 
++ `fb_uid` _`optional`_ 
++ `fb_token_expired` _`optional`_ 
++ `latitude` _`optional`_ 
++ `longitude` _`optional`_ 
 
-##### <a id="withdrawal-request-parameters"></a> Parameters
-+ `deposit_withdrawal[amount]` *(required)*. Amount to withdraw.
-+ `deposit_withdrawal[bank_account_id]` *(required)*. Bank account id for current user’s target account.
-+ `deposit_withdrawal[password]` *(required)*. Current user’s password.
 
-##### <a id="withdrawal-request-sample-request"></a> Sample Request
+##### <a name="get-user-request"></a>Sample Request
 ````sh
-curl -u 204254:Sy7PRGGr4foUk22uzjMu -X POST "https://api.bukalapak.com/v1/dompet/withdraw.json" --data "deposit_withdrawal[amount]=25000&deposit_withdrawal[bank_account_id]=41812&deposit_withdrawal[password]=testing1234"
-
+curl -X POST --data "name=hayashi" -H "X-API-KEY: 4974328ce522a3eb86ecf73a193490314cf98c74" http://shoop.dev/api/v2/user/edit_user
 ````
 
-##### <a id="withdrawal-request-sample-response"></a> Sample Response
-Success response:
+##### <a name="get-user-response"></a>Sample Response
 
 ````json
 {
-  "status":"OK",
-  "withdrawal_id":4,
-  "message":"Pencairan akan diproses oleh tim Bukalapak. Dana akan ditransfer ke rekening Anda dalam waktu 1x24 jam."
-}
-````
-
-Invalid account ID:
-
-````json
-{
-  "status":"ERROR",
-  "withdrawal_id":null,
-  "message":
-  "Rekening pencairan harus milik Anda."
-}
-````
-
-Invalid password:
-
-````json
-{
-  "status":"ERROR",
-  "withdrawal_id":null,
-  "message":"Password tidak valid."
-}
-````
-
-More than one withdrawal request in a day:
-
-````json
-{
-  "status":"ERROR",
-  "withdrawal_id":null,
-  "message":"Pencairan hanya bisa dilakukan satu kali sehari."
-}
-````
-
-More than one withdrawal request in a day and invalid password:
-
-````json
-{ 
-  "status":"ERROR",
-  "withdrawal_id":null,
-  "message":"Pencairan hanya bisa dilakukan satu kali sehari., Password tidak valid."
-}
-````
-
-#### <a id="dictionary"></a> Dictionary
-- `type` Type of muation, possible values are `Deposit::Credit` and `Deposit::Debit`
-- `action` Action that trigger mutation. Possible values are  `remit`, `topup`, `payment`, `refund`, `withdrawal`, `restore`. 
+    "user": {
+        "id_user": "2",
+        "name": "hayashi",
+        "email": "shcode@ymail.com",
+        "phone": "+6283857723355",
+        "birthdate": "1986-12-15",
+        "username": "shcode",
+        "address": "Jl. Merak No. 10 Surabaya",
+        "city": "Surabaya",
+        "country": "Indonesia",
+        "bio": null,
+        "avatar": "hohoho",
+        "type": "2",
+        "fb_token": "",
+        "fb_token_expired": null,
+        "tw_token": "218307206-cTmwJ7vAijoufjtbQzVvowImzP9jq2WUbADcFtnc",
+        "tw_secret": "SHhfmg4jmiBEwO0EFBIMCaaI4V2hArJyI5vKnl4aq5Y",
+        "album_id": "4222704171637",
+        "show_phone": "1",
+        "gcm_regid": null,
+        "updated": "1",
+        "fb_uid": "null",
+        "joined_date": "2013-04-01 11:00:00",
+        "premium_end": "2013-10-15 00:47:55",
+        "id_key": "2",
+        "last_activity": null,
+        "buyer_poin": "0",
+        "seller_poin": "0",
+        "is_trusted": "0",
+        "is_premium": "1",
+        "id_location": null
+    },
+    "product_count": {
+        "all": 54,
+        "active": 0
+    },
+    "follow": {
+        "following": 0,
+        "follower": 0
+    },
+    "status": 1
+}````

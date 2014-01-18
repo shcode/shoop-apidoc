@@ -1,7 +1,7 @@
 ## Auth API Documentation
 
 - [Get Key (Login)](#get-key)
-	+ [Resource URL](#get-key-url)
+    + [Resource URL](#get-key-url)
 	+ [Parameters](#get-key-param)
 	+ [Sample Request](#get-key-request)
 	+ [Sample Response](#get-key-response)
@@ -11,14 +11,20 @@
     + [Parameters](#register-param)
     + [Sample Request](#register-request)
     + [Sample Response](#register-response)
+- [Forgot Password](#forgot-password)
+    + [Resource URL](#forgot-password-url)
+    + [Parameters](#forgot-password-param)
+    + [Sample Request](#forgot-password-request)
+    + [Sample Response](#forgot-password-response)
 
-### <a name="get-key"></a> `POST` Get Key
+
+#### <a name="get-key"></a> `POST` Get Key
 Getting key to access another API with icon `🔒`. First step to access our system with API. 
 
-#### <a name="get-key-url"></a> Resource URL
+##### <a name="get-key-url"></a> Resource URL
 /api/v2/auth/login
 
-#### <a name="get-key-param"></a> Parameters
+##### <a name="get-key-param"></a> Parameters
 + `email` ___`required`___ with password. Valid email address
 + `password` ___`required`___ with email. User password.
 + `fb_token` ___`required`___ with fb_uid. Facebook token from Facebook Connect.
@@ -27,12 +33,12 @@ Getting key to access another API with icon `🔒`. First step to access our sys
 
 You can use with either email and password, or fb_token and fb_uid. 
 
-#### <a name="get-key-request"></a>Sample Request
+##### <a name="get-key-request"></a>Sample Request
 ````sh
 curl -X POST --data "email=shcode@ymail.com&password=rahasia" http://shoop.dev/api/v2/auth/login
 ````
 
-#### <a name="get-key-response"></a>Sample Response
+##### <a name="get-key-response"></a>Sample Response
 
 ````json
 {
@@ -40,7 +46,7 @@ curl -X POST --data "email=shcode@ymail.com&password=rahasia" http://shoop.dev/a
     "key": "4974328ce522a3eb86ecf73a193490314cf98c74"
 }
 ````
-#### <a name="get-key-error"></a>Sample Error
+##### <a name="get-key-error"></a>Sample Error
 
 Missing parameter.
 
@@ -60,13 +66,13 @@ Password invalid.
 }
 ````
 
-### <a name="register"></a> `POST` Register
+#### <a name="register"></a> `POST` Register
 Register to Shoop system. If you connect with facebook please add fb_token.
 
-#### <a name="register-url"></a> Resource URL
+##### <a name="register-url"></a> Resource URL
 /api/v2/auth/register
 
-#### <a name="register-param"></a> Parameters
+##### <a name="register-param"></a> Parameters
 + `email` ___`required`___ Valid email address.
 + `password` ___`required`___ User password.
 + `name` ___`required`___ User name.
@@ -80,12 +86,12 @@ Register to Shoop system. If you connect with facebook please add fb_token.
 + `show_phone` __`deprecated`__ 
 + `address` __`deprecated`__
 
-#### <a name="register-request"></a>Sample Request
+##### <a name="register-request"></a>Sample Request
 ````sh
 curl -X POST --data "email=shcode@ymail.com&password=rahasia&name=shcode&id_location=7&phone=082232856363" http://shoop.dev/api/v2/auth/register
 ````
 
-#### <a name="register-response"></a>Sample Response
+##### <a name="register-response"></a>Sample Response
 
 ````json
 {
@@ -94,3 +100,25 @@ curl -X POST --data "email=shcode@ymail.com&password=rahasia&name=shcode&id_loca
 }
 ````
 
+#### <a name="forgot-password"></a> `POST` Forgot Password
+Request token to reset password and then send to email.
+
+##### <a name="forgot-password-url"></a> Resource URL
+/api/v2/auth/forgot_password
+
+##### <a name="register-param"></a> Parameters
++ `email` ___`required`___ Valid email address.
+
+##### <a name="register-request"></a>Sample Request
+````sh
+curl -X POST --data "email=shcode@ymail.com" http://shoop.dev/api/v2/auth/forgot_password
+````
+
+##### <a name="register-response"></a>Sample Response
+
+````json
+{
+    "status": 1,
+    "message":"Profile detail and reset password has been sent to your email."
+}
+````
