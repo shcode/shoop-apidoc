@@ -211,7 +211,7 @@ Follow another user
 
 ##### <a name="follow-request"></a>Sample Request
 ````sh
-curl -X POST --data "user[]=5&user[]=4" -H "X-API-KEY: 4974328ce522a3eb86ecf73a193490314cf98c74" http://shoop.dev/api/v2/follow/following
+curl -X POST --data "user[]=5&user[]=4" -H "X-API-KEY: 4974328ce522a3eb86ecf73a193490314cf98c74" http://shoop.dev/api/v2/follow/set_follow
 ````
 
 ##### <a name="follow-response"></a>Sample Response
