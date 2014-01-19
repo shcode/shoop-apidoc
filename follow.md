@@ -29,9 +29,9 @@ Get list of following from user
 /api/v2/follow/get_following
 
 ##### <a name="get-following-param"></a> Parameters
-+ `id_user` _`optional`_ User whose following. Default `active user`
-+ `limit` _`optional`_ Limit list of following. Default `20`
-+ `offset` ._`optional`_ Offset list of following. Default `0`
++ `id_user` _`optional`_ User whose following. Default <code>active user</code>
++ `limit` _`optional`_  Limit list of following. Default <code>20</code>
++ `offset` ._`optional`_  Offset list of following. Default <code>0</code>
 
 ##### <a name="get-following-request"></a>Sample Request
 ````sh
@@ -68,9 +68,9 @@ Get list of follower from user
 /api/v2/follow/get_follower
 
 ##### <a name="get-follower-param"></a> Parameters
-+ `id_user` _`optional`_ User whose follow by other user. Default `active user`
-+ `limit` _`optional`_ Limit list of follower. Default `20`
-+ `offset` ._`optional`_ Offset list of follower. Default `0`
++ `id_user` _`optional`_ User whose follow by other user. Default <code>active user</code>
++ `limit` _`optional`_ Limit list of follower. Default <code>20</code>
++ `offset` ._`optional`_ Offset list of follower. Default <code>0</code>
 
 ##### <a name="get-following-request"></a>Sample Request
 ````sh
@@ -182,32 +182,10 @@ curl -H "X-API-KEY: 4974328ce522a3eb86ecf73a193490314cf98c74" http://shoop.dev/a
 Follow another user
 
 ##### <a name="follow-url"></a> Resource URL
-/api/v2/follow/following
-
-##### <a name="follow-param"></a> Parameters
-+ `user` ___`required`___ User who want to follow. It can be `array of integer` or single `integer`
-
-##### <a name="follow-request"></a>Sample Request
-````sh
-curl -X POST --data "user[]=5&user[]=4" -H "X-API-KEY: 4974328ce522a3eb86ecf73a193490314cf98c74" http://shoop.dev/api/v2/follow/set_follow
-````
-
-##### <a name="follow-response"></a>Sample Response
-
-````json
-{
-    "status": 1
-}
-````
-
-#### <a name="follow"></a> `🔒` `POST` Follow
-Follow another user
-
-##### <a name="follow-url"></a> Resource URL
 /api/v2/follow/set_follow
 
 ##### <a name="follow-param"></a> Parameters
-+ `user` ___`required`___ User who want to follow. It can be `array of integer` or single `integer`
++ `user` ___`required`___ User who want to follow. It can be <code>array of integer</code> or single <code>integer</code>
 
 ##### <a name="follow-request"></a>Sample Request
 ````sh
@@ -222,14 +200,14 @@ curl -X POST --data "user[]=5&user[]=4" -H "X-API-KEY: 4974328ce522a3eb86ecf73a1
 }
 ````
 
-#### <a name="unfollow"></a> `🔒` `POST` Follow
+#### <a name="unfollow"></a> `🔒` `POST` Unfollow
 Unfollow another user
 
 ##### <a name="unfollow-url"></a> Resource URL
 /api/v2/follow/set_unfollow
 
 ##### <a name="unfollow-param"></a> Parameters
-+ `id_user` ___`required`___ User who want to follow. type `integer`
++ `id_user` ___`required`___ User who want to follow. type <code>integer</code>
 
 ##### <a name="unfollow-request"></a>Sample Request
 ````sh
