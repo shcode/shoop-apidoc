@@ -1,22 +1,22 @@
 ## User API Documentation
 
 - [Get Active User](#get-active-user)
-  + [Resource URL](#get-active-user-url)
-  + [Parameters](#get-active-user-param)
-  + [Sample Request](#get-active-user-request)
-  + [Sample Response](#get-active-user-response)
+    + [Resource URL](#get-active-user-url)
+    + [Parameters](#get-active-user-param)
+    + [Sample Request](#get-active-user-request)
+    + [Sample Response](#get-active-user-response)
 - [Get User](#get-user)
-  + [Resource URL](#get-user-url)
-  + [Parameters](#get-user-param)
-  + [Sample Request](#get-user-request)
-  + [Sample Response](#get-user-response)
+    + [Resource URL](#get-user-url)
+    + [Parameters](#get-user-param)
+    + [Sample Request](#get-user-request)
+    + [Sample Response](#get-user-response)
 - [Edit User](#edit-user)
-  + [Resource URL](#edit-user-url)
-  + [Parameters](#edit-user-param)
-  + [Sample Request](#edit-user-request)
-  + [Sample Response](#edit-user-response)
+    + [Resource URL](#edit-user-url)
+    + [Parameters](#edit-user-param)
+    + [Sample Request](#edit-user-request)
+    + [Sample Response](#edit-user-response)
 
-#### <a name="get-active-user"></a> `GET` `🔒` Get Active User
+#### <a name="get-active-user"></a> `🔒` `GET` Get Active User
 Get information about active user. include count product, following, follower, and (rating [not yet])
 
 ##### <a name="get-active-user-url"></a> Resource URL
@@ -78,7 +78,7 @@ curl -H "X-API-KEY: 4974328ce522a3eb86ecf73a193490314cf98c74" http://shoop.dev/a
 }
 ````
 
-#### <a name="get-user"></a> `GET` `🔒` Get User
+#### <a name="get-user"></a> `🔒` `GET` Get User
 Get information about another user. include count product, following, follower, and (rating [not yet])
 
 ##### <a name="get-user-url"></a> Resource URL
@@ -119,7 +119,7 @@ curl -H "X-API-KEY: 4974328ce522a3eb86ecf73a193490314cf98c74" http://shoop.dev/a
 }
 ````
 
-#### <a name="edit-user"></a> `POST` `🔒` Edit User
+#### <a name="edit-user"></a> `🔒` `POST` Edit User
 Edit active user
 
 ##### <a name="get-user-url"></a> Resource URL
