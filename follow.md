@@ -189,7 +189,7 @@ Follow another user
 
 ##### <a name="follow-request"></a>Sample Request
 ````sh
-curl -X POST --data "user[]=5&user[]=4" -H "X-API-KEY: 4974328ce522a3eb86ecf73a193490314cf98c74" http://shoop.dev/api/v2/follow/following
+curl -X POST --data "user[]=5&user[]=4" -H "X-API-KEY: 4974328ce522a3eb86ecf73a193490314cf98c74" http://shoop.dev/api/v2/follow/set_follow
 ````
 
 ##### <a name="follow-response"></a>Sample Response
@@ -204,7 +204,7 @@ curl -X POST --data "user[]=5&user[]=4" -H "X-API-KEY: 4974328ce522a3eb86ecf73a1
 Follow another user
 
 ##### <a name="follow-url"></a> Resource URL
-/api/v2/follow/following
+/api/v2/follow/set_follow
 
 ##### <a name="follow-param"></a> Parameters
 + `user` ___`required`___ User who want to follow. It can be `array of integer` or single `integer`
@@ -226,14 +226,14 @@ curl -X POST --data "user[]=5&user[]=4" -H "X-API-KEY: 4974328ce522a3eb86ecf73a1
 Unfollow another user
 
 ##### <a name="unfollow-url"></a> Resource URL
-/api/v2/follow/unfollow
+/api/v2/follow/set_unfollow
 
 ##### <a name="unfollow-param"></a> Parameters
 + `id_user` ___`required`___ User who want to follow. type `integer`
 
 ##### <a name="unfollow-request"></a>Sample Request
 ````sh
-curl -X POST --data "id_user=4" -H "X-API-KEY: 4974328ce522a3eb86ecf73a193490314cf98c74" http://shoop.dev/api/v2/follow/unfollow
+curl -X POST --data "id_user=4" -H "X-API-KEY: 4974328ce522a3eb86ecf73a193490314cf98c74" http://shoop.dev/api/v2/follow/set_unfollow
 ````
 
 ##### <a name="unfollow-response"></a>Sample Response
