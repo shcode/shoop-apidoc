@@ -78,7 +78,7 @@ Register to Shoop system. If you connect with facebook please add fb_token.
 + `name` ___`required`___ User name.
 + `id_location` ___`required`___ Location ID, you can get it from [Location](#).
 + `phone` _`optional`_ User phone.
-+ `gcm_regid` _`optional`_ Google Cloud Message ID. For notification.
++ `gcm_id` _`optional`_ Google Cloud Message ID. For notification.
 + `longitude` _`optional`_ Location user by Longitude.
 + `latitude` _`optional`_ Location user by Latitude.
 + `avatar` _`optional`_ Path for user avatar
