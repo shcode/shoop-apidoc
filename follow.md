@@ -185,7 +185,8 @@ Follow another user
 /api/v2/follow/set_follow
 
 ##### <a name="follow-param"></a> Parameters
-+ `user` ___`required`___ User who want to follow. It can be <code>array of integer</code> or single <code>integer</code>
++ `id_user` ___`required`___ User who want to follow. Use this if you have only one user to follow.
++ `user` ___`required`___ Array ser who want to follow. Use this if you have multiple user to follow.
 
 ##### <a name="follow-request"></a>Sample Request
 ````sh
