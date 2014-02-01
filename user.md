@@ -45,7 +45,7 @@ curl -H "X-API-KEY: 4974328ce522a3eb86ecf73a193490314cf98c74" http://shoop.dev/a
         "city": "Surabaya",
         "country": "Indonesia",
         "bio": null,
-        "avatar": "hohoho",
+        "avatar": null,
         "type": "2",
         "fb_token": "",
         "fb_token_expired": null,
@@ -53,27 +53,33 @@ curl -H "X-API-KEY: 4974328ce522a3eb86ecf73a193490314cf98c74" http://shoop.dev/a
         "tw_secret": "SHhfmg4jmiBEwO0EFBIMCaaI4V2hArJyI5vKnl4aq5Y",
         "album_id": "4222704171637",
         "show_phone": "1",
-        "gcm_id": null,
+        "gcm_regid": "APA91bHJYsdw6tRLSMFH-ZlBrvwFwsPjNVu_Vo-q3RJZ1q9dfQs9BZ6_NrzZW1otXE1amTA-EkQwQQElqb910B1Qjs5JzGL-9wD0_vGyr71cAxEmeimJQ-HdN9SZTAAaxlQPxSH3D01nCT3VKfxwyj70t-HO2cdwBw",
+        "premium_end": "2013-10-15 00:47:55",
+        "is_premium": "1",
         "updated": "1",
         "fb_uid": "null",
         "joined_date": "2013-04-01 11:00:00",
-        "premium_end": "2013-10-15 00:47:55",
         "id_key": "2",
+        "longitude": null,
+        "latitude": null,
+        "id_location": null,
+        "status": "0",
+        "app_version": null,
         "last_activity": null,
         "buyer_poin": "0",
         "seller_poin": "0",
-        "is_trusted": "0",
-        "is_premium": "1",
-        "id_location": null
+        "is_trusted": null,
+        "is_sundul": null
     },
     "product_count": {
         "all": 54,
         "active": 0
     },
     "follow": {
-        "following": 0,
-        "follower": 0
+        "following": 2,
+        "follower": 2
     },
+    "shoop_count": 0,
     "status": 1
 }
 ````
@@ -96,26 +102,30 @@ curl -H "X-API-KEY: 4974328ce522a3eb86ecf73a193490314cf98c74" http://shoop.dev/a
 
 ````json
 {
-    "user":{
-        "name":null,
-        "address":null,
-        "email":"banghen@gmail.com",
-        "phone":"+628157901652",
-        "city":null,
-        "country":null,
-        "buyer_poin":"0",
-        "seller_poin":"0",
-        "id_location":null
+    "status": 1,
+    "user": {
+        "id_user": "444",
+        "name": null,
+        "address": null,
+        "email": "banghen@gmail.com",
+        "phone": "+628157901652",
+        "city": null,
+        "country": null,
+        "avatar": null,
+        "buyer_poin": "0",
+        "seller_poin": "0",
+        "id_location": null
     },
-    "product_count":{
-        "all":0,
-        "active":0
+    "product_count": {
+        "all": 0,
+        "active": 0
     },
-    "follow":{
-        "following":0,
-        "follower":0
+    "follow": {
+        "following": 0,
+        "follower": 0,
+        "follow_status": 0
     },
-    "status":1
+    "shoop_count": 0
 }
 ````
 
@@ -153,7 +163,7 @@ curl -X POST --data "name=hayashi" -H "X-API-KEY: 4974328ce522a3eb86ecf73a193490
 {
     "user": {
         "id_user": "2",
-        "name": "hayashi",
+        "name": "M. Sulton Hasanuddin",
         "email": "shcode@ymail.com",
         "phone": "+6283857723355",
         "birthdate": "1986-12-15",
@@ -162,7 +172,7 @@ curl -X POST --data "name=hayashi" -H "X-API-KEY: 4974328ce522a3eb86ecf73a193490
         "city": "Surabaya",
         "country": "Indonesia",
         "bio": null,
-        "avatar": "hohoho",
+        "avatar": null,
         "type": "2",
         "fb_token": "",
         "fb_token_expired": null,
@@ -170,27 +180,33 @@ curl -X POST --data "name=hayashi" -H "X-API-KEY: 4974328ce522a3eb86ecf73a193490
         "tw_secret": "SHhfmg4jmiBEwO0EFBIMCaaI4V2hArJyI5vKnl4aq5Y",
         "album_id": "4222704171637",
         "show_phone": "1",
-        "gcm_id": null,
+        "gcm_regid": "APA91bHJYsdw6tRLSMFH-ZlBrvwFwsPjNVu_Vo-q3RJZ1q9dfQs9BZ6_NrzZW1otXE1amTA-EkQwQQElqb910B1Qjs5JzGL-9wD0_vGyr71cAxEmeimJQ-HdN9SZTAAaxlQPxSH3D01nCT3VKfxwyj70t-HO2cdwBw",
+        "premium_end": "2013-10-15 00:47:55",
+        "is_premium": "1",
         "updated": "1",
         "fb_uid": "null",
         "joined_date": "2013-04-01 11:00:00",
-        "premium_end": "2013-10-15 00:47:55",
         "id_key": "2",
+        "longitude": null,
+        "latitude": null,
+        "id_location": null,
+        "status": "0",
+        "app_version": null,
         "last_activity": null,
         "buyer_poin": "0",
         "seller_poin": "0",
-        "is_trusted": "0",
-        "is_premium": "1",
-        "id_location": null
+        "is_trusted": null,
+        "is_sundul": null
     },
     "product_count": {
         "all": 54,
         "active": 0
     },
     "follow": {
-        "following": 0,
-        "follower": 0
+        "following": 2,
+        "follower": 2
     },
+    "shoop_count": 0,
     "status": 1
 }
 ````
