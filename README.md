@@ -13,9 +13,10 @@ Ini adalah API Documentation untuk [Shoop](http://www.getshoop.com/). Shoop adal
   - Get User Setting
   - Set User Setting
 + Product API
-  - Get Detail Product 
-  - Get List Product
-  - Get 
+  - `🔒` `GET` [Get Detail Product](product.md#get-product-detail) 
+  - `🔒` `GET` [Get Product User](product.md#get-product-user)
+  - `🔒` `POST` [Add Product](product.md#add-product)
+  - `🔒` `POST` [Edit Product](product.md#edit-product)
 + Store API
 + Social API
 + Rate API
