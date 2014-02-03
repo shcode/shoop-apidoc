@@ -1,4 +1,4 @@
-## User API Documentation
+## Product API Documentation
 
 - [Get Product Detail](#get-product)
     + [Resource URL](#get-product-url)
@@ -10,6 +10,11 @@
     + [Parameters](#get-product-user-param)
     + [Sample Request](#get-product-user-request)
     + [Sample Response](#get-product-user-response)
+- [Get Product by Category](#get-product-cat)
+    + [Resource URL](#get-product-cat-url)
+    + [Parameters](#get-product-cat-param)
+    + [Sample Request](#get-product-cat-request)
+    + [Sample Response](#get-product-cat-response)    
 - [Add Product](#add-product)
     + [Resource URL](#add-product-url)
     + [Parameters](#add-product-param)
@@ -137,7 +142,7 @@ curl -H "X-API-KEY: 4974328ce522a3eb86ecf73a193490314cf98c74" http://shoop.dev/a
 ````
 
 #### <a name="get-product-user"></a> `🔒` `GET` Get Product User
-Get product that uploaded and liked active user
+Get product by user
 
 ##### <a name="get-product-user-url"></a> Resource URL
 /api/v2/product/get_product_user
@@ -151,7 +156,8 @@ Get product that uploaded and liked active user
 + `id_superloc` _`optional`_ Category ID
 + `tag` _`optional`_ Tag filter
 + `filter` _`optional`_ filter for browse, enum <code>all</all> or <code>own</code>. Default <code>all</code>
-+ `last_time` _`optional`_ Browse from last_time
++ `since_time` _`optional`_ Browse product from since_time
++ `until_time` _`optional`_ Browse product up to until_time. ignored if since_time is not empty
 + `sort` _`optional`_ Sort product, enum <code>time</code> <code>popular</code> <code>comment</code> <code>price</code> <code>stock</code>. Default <code>time</code>
 + `direction` _`optional`_ Direction of sort. enum <code>desc</code> or <code>asc</code>. Default <code>desc</code>
 
@@ -248,6 +254,36 @@ curl -H "X-API-KEY: 4974328ce522a3eb86ecf73a193490314cf98c74" http://shoop.dev/a
         }
     ]
 }
+````
+
+#### <a name="get-product-cat"></a> `🔒` `GET` Get Product User
+Get product by category
+
+##### <a name="get-product-cat-url"></a> Resource URL
+/api/v2/product/get_product_user
+
+##### <a name="get-product-cat-param"></a> Parameters
++ `id_supercat` ___`required`___ Category ID
++ `limit` _`optional`_ Limit for browse. Default <code>6</code>
++ `offset` _`optional`_ Limit for browse. Default <code>1</code>
++ `keyword` _`optional`_ Search key
++ `id_superloc` _`optional`_ Location ID
++ `tag` _`optional`_ Tag filter
++ `filter` _`optional`_ filter for browse, enum <code>all</all> or <code>own</code>. Default <code>all</code>
++ `since_time` _`optional`_ Browse product from since_time
++ `until_time` _`optional`_ Browse product up to until_time. ignored if since_time is not empty
++ `sort` _`optional`_ Sort product, enum <code>time</code> <code>popular</code> <code>comment</code> <code>price</code> <code>stock</code>. Default <code>time</code>
++ `direction` _`optional`_ Direction of sort. enum <code>desc</code> or <code>asc</code>. Default <code>desc</code>
+
+##### <a name="get-product-cat-request"></a>Sample Request
+````sh
+curl -H "X-API-KEY: 4974328ce522a3eb86ecf73a193490314cf98c74" http://shoop.dev/api/v2/product/get_product_category?id_supercat=2&limit=2
+````
+
+##### <a name="get-product-cat-response"></a>Sample Response
+
+````json
+menyusul (jek pusing)
 ````
 
 #### <a name="add-product"></a> `🔒` `POST` Add Product
