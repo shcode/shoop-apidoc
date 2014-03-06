@@ -66,6 +66,7 @@ curl -H "X-API-KEY: 4974328ce522a3eb86ecf73a193490314cf98c74" http://shoop.dev/a
         "hubmeup_link": "http://www.hubmeup.com/tes-102/",
         "from_app": null,
         "id_supercat": "1",
+        "id_buyercat": "1",
         "id_superloc": "11",
         "discount": "0",
         "view_count": "0",
@@ -77,6 +78,10 @@ curl -H "X-API-KEY: 4974328ce522a3eb86ecf73a193490314cf98c74" http://shoop.dev/a
         "supercat": {
             "idsc": "1",
             "name": "Perlengkapan Olahraga"
+        },
+        "buyercat": {
+            "idbc": "15",
+            "name": "Alat & Perlengkapan Olahraga"
         },
         "superloc": {
             "idsl": "11",
@@ -152,8 +157,9 @@ Get product by user
 + `limit` _`optional`_ Limit for browse. Default <code>6</code>
 + `offset` _`optional`_ Limit for browse. Default <code>1</code>
 + `keyword` _`optional`_ Search key
-+ `id_supercat` _`optional`_ Location ID
-+ `id_superloc` _`optional`_ Category ID
++ `id_supercat` _`optional`_ Category ID
++ `id_buyercat` _`optional`_ Buyer Category ID
++ `id_superloc` _`optional`_ Location ID
 + `tag` _`optional`_ Tag filter
 + `filter` _`optional`_ filter for browse, enum <code>all</all> or <code>own</code>. Default <code>all</code>
 + `since_time` _`optional`_ Browse product from since_time
@@ -263,7 +269,8 @@ Get product by category
 /api/v2/product/get_product_user
 
 ##### <a name="get-product-cat-param"></a> Parameters
-+ `id_supercat` ___`required`___ Category ID
++ `id_supercat` Category ID
++ `id_buyercat` Buyer Category ID (One of id_supercat & id_buyercat is required)
 + `limit` _`optional`_ Limit for browse. Default <code>6</code>
 + `offset` _`optional`_ Limit for browse. Default <code>1</code>
 + `keyword` _`optional`_ Search key
@@ -300,6 +307,7 @@ Add Product
 + `prod_tag` ___`required`___ pisah dengan <code>,</code>
 + `prod_desc` ___`required`___
 + `id_supercat` ___`required`___
++ `id_buyercat` ___`required`___
 + `id_superloc` ___`required`___
 + `condition` _`optional`_ 
 + `is_nego` _`optional`_ 
@@ -348,6 +356,10 @@ curl -X POST --data "prod_title=Baju&prod_price=15000&prod_curr=IDR&prod_desc=ju
         "supercat": {
             "idsc": "1",
             "name": "Perlengkapan Olahraga"
+        },
+        "buyercat": {
+            "idsc": "15",
+            "name": "Alat & Perlengkapan Olahraga"
         },
         "superloc": {
             "idsl": "1",
