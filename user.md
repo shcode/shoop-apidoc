@@ -15,6 +15,8 @@
     + [Parameters](#edit-user-param)
     + [Sample Request](#edit-user-request)
     + [Sample Response](#edit-user-response)
+- [Track User's Action](#track-user-action)
+
 
 #### <a name="get-active-user"></a> `🔒` `GET` Get Active User
 Get information about active user. include count product, following, follower, and (rating [not yet])
@@ -211,7 +213,7 @@ curl -X POST --data "name=hayashi" -H "X-API-KEY: 4974328ce522a3eb86ecf73a193490
 }
 ````
 
-#### <a name="track-user-action"></a> `🔒` `POST` Track User's Action
+#### <a name="track-user-action"></a> `POST` Track User's Action
 Track User's Action
 
 ##### <a name="track-user-action-url"></a> Resource URL
