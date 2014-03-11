@@ -15,6 +15,8 @@
     + [Parameters](#edit-user-param)
     + [Sample Request](#edit-user-request)
     + [Sample Response](#edit-user-response)
+- [Track User's Action](#track-user-action)
+
 
 #### <a name="get-active-user"></a> `🔒` `GET` Get Active User
 Get information about active user. include count product, following, follower, and (rating [not yet])
@@ -207,6 +209,36 @@ curl -X POST --data "name=hayashi" -H "X-API-KEY: 4974328ce522a3eb86ecf73a193490
         "follower": 2
     },
     "shoop_count": 0,
+    "status": 1
+}
+````
+
+#### <a name="track-user-action"></a> `POST` Track User's Action
+Track User's Action
+
+##### <a name="track-user-action-url"></a> Resource URL
+/api/v2/user/action_track
+
+##### <a name="track-user-action-params"></a> Parameters
+
+json array of [
+
++ `id`  track id, should be globally unique. Can be done using md5(random_string)
++ `resource`  e.g : Profile / Feed / Browse.
++ `action`  e.g : open / close
++ `time`    e.g : 2014-03-10 08:20:10
+
+]
+
+##### <a name="track-user-action-request"></a>Sample Request
+````sh
+curl -X POST --data "data=[{\"id\": \"jasklfdjs8378329\", \"resource\": \"Profile\", \"action\": \"open\", \"time\": \"2014-03-10 08:20:10\"}]" -H "X-API-KEY: 4974328ce522a3eb86ecf73a193490314cf98c74" http://shoop.dev/api/v2/user/action_track
+````
+
+##### <a name="track-user-action-response"></a>Sample Response
+
+````json
+{
     "status": 1
 }
 ````
